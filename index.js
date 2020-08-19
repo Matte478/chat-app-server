@@ -5,7 +5,7 @@ const cors = require('cors')
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users')
 
-const port = 5000
+const PORT = process.env.PORT || 5000
 
 const router = require('./router')
 
@@ -62,6 +62,6 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(port, () => {
+server.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
